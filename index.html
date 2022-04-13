@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>elavarasan</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        color: white;
+      }
+      .nav {
+        display: flex;
+        padding-left: 7%;
+        margin-top: 10px;
+        padding: 5px;
+
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav h1 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .lio {
+        color: rgb(255, 68, 0);
+      }
+      .menu {
+        height: 220px;
+        width: 200px;
+        background-color: rgb(109, 85, 85);
+        text-align: center;
+        position: relative;
+        bottom: -60px;
+        border-radius: 10px;
+      }
+      .menu li {
+        list-style-type: none;
+        margin-top: 20px;
+      }
+      .nav ul li a {
+        margin-top: px;
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        margin-top: 20px;
+      }
+      .nav ul button {
+        float: right;
+        margin-top: 5px;
+        margin-right: 5px;
+        color: black;
+        padding: 0 2px;
+        background-color: rgb(255, 103, 47);
+        border-radius: 5px;
+      }
+      .links:hover {
+        color: rgb(255, 68, 0);
+      }
+      .bar {
+        display: none;
+      }
+      .icon {
+        border-radius: 10px;
+        margin-right: 5px;
+      }
+      .icon button {
+        padding: 5px 10px;
+        color: wheat;
+        background-color: #f53f3f;
+        border: none;
+      }
+      .subandmenu {
+        margin-right: 10px;
+      }
+
+      .subscribe {
+        padding: 2px;
+        color: aliceblue;
+        background-color: rgb(255, 100, 44);
+        border-radius: 5px;
+      }
+      .selfintro {
+        margin-left: 15%;
+        margin-top: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .selfintro h5 {
+        color: #fcfc;
+        font-family: monospace;
+      }
+      .selfintro h1 span {
+        color: rgb(247, 72, 8);
+      }
+      .selfintro h1 {
+        margin: 13px 0;
+        font-family: serif;
+      }
+      .email input {
+        margin-top: 25px;
+        padding: 10px 5px;
+        width: 250px;
+        border-radius: 40px;
+        border: 3px solid rgb(231, 80, 25);
+        outline: none;
+        box-shadow: 0px 0px 5px rgb(223, 45, 45), 0px 0px 15px #858585;
+      }
+
+      .delay {
+        display: none;
+      }
+      .email button {
+        display: inline-block;
+        position: relative;
+        left: -75px;
+        outline: none;
+        border: none;
+        padding: 7px 10px;
+        border-radius: 30px;
+        background-color: #f9004d;
+        color: white;
+        box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+      }
+
+      .image {
+        height: 400px;
+        width: 300px;
+        background-color: rgb(36, 30, 30);
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .img {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        margin-left: 20px;
+        display: flex;
+      }
+      .sn {
+        position: relative;
+        bottom: -25px;
+        border-radius: 10px;
+      }
+      .about {
+        margin-left: 7%;
+      }
+      .about h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: 5px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .about h4 {
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: 10px;
+        font-family: serif;
+      }
+      .about h4 span {
+        color: rgb(223, 41, 41);
+      }
+      .about p {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        line-height: 30px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        text-align: left;
+        font-weight: 100;
+        font-size: 15px;
+      }
+      .about button {
+        display: inline-block;
+        outline: none;
+        border: none;
+        padding: 7px 10px;
+        border-radius: 30px;
+        background-color: #f34a4a;
+        color: white;
+        box-shadow: 0px 0px 5px #000, 0px 0px 15px #423939;
+        text-align: center;
+        margin-top: 20px;
+        justify-content: center;
+        text-align: center;
+      }
+      .talk {
+        text-align: center;
+      }
+      .services {
+        margin: 30px;
+      }
+
+      .our {
+        text-align: center;
+        font-weight: 0px;
+        font-family: serif;
+      }
+      .sanjai {
+        height: 500px;
+        width: 300px;
+        background-color: #332f2f;
+        text-align: center;
+        justify-content: center;
+        margin: 30px auto;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .r {
+        position: relative;
+        left: 5px;
+      }
+      .tappa h3 {
+        margin: 20px;
+
+        font-family: monospace;
+      }
+      .tappa p {
+        line-height: 40px;
+        font-family: serif;
+        font-weight: 0px;
+      }
+      .tappa img {
+        margin-top: 10px;
+      }
+      .tappa button {
+        margin-top: 20px;
+        padding: 10px 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(255, 57, 57);
+        color: wheat;
+        box-shadow: 0px 0px 5px #000, 0px 0px 15px #a56969;
+      }
+      .hide {
+        margin-top: 30px;
+        background-color: rgb(46, 40, 40);
+        height: 200px;
+        margin-left: 30px;
+        margin-right: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 10px;
+      }
+      .hide button {
+        margin-top: 20px;
+        display: inline-block;
+        outline: none;
+        border: none;
+        padding: 7px 10px;
+        border-radius: 5px;
+        background-color: #f53f3f;
+        color: white;
+        box-shadow: 0px 0px 5px #000, 0px 0px 15px #413535;
+      }
+      .last {
+        margin: 30px;
+        color: rgb(255, 246, 246);
+        height: 200px;
+        color: rgb(68, 59, 59);
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(51, 48, 48);
+        border-radius: 10px;
+      }
+      .last h1 {
+        font-family: serif;
+        font-weight: 10px;
+        margin-bottom: 20px;
+        color: white;
+      }
+      .last h1 span {
+        color: #f53f3f;
+      }
+      .last p {
+        font-family: serif "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        letter-spacing: 1px;
+        color: white;
+      }
+      .c {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .c a img {
+        border-radius: 15px;
+      }
+      .uls {
+        height: 380px;
+        background-color: #4e3e3e;
+        color: aliceblue;
+        margin: 50px;
+        height: 220px;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 300px;
+        height: 240px;
+      }
+      .overlay {
+        background-color: rgb(209, 209, 209);
+        opacity: 0.8;
+      }
+      .uls button {
+        float: right;
+        margin-top: 10px;
+        margin-right: 20px;
+        padding: 5px 10px;
+        color: rgb(255, 249, 249);
+        background-color: #413535;
+        border: none;
+      }
+      .uls ul {
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        margin-top: 20px;
+      }
+      .uls ul li {
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+      }
+      .uls ul li a {
+        margin-top: 20px;
+        color: rgb(255, 253, 253);
+        text-decoration: none;
+      }
+      .link:hover {
+        color: #f34a4a;
+      }
+      #l {
+        margin-top: 30px;
+      }
+      .i {
+        display: none;
+      }
+      .link {
+        color: rgb(255, 255, 255);
+      }
+      .letstalk{
+        height: 300px;
+        margin-left: 10px;
+        position: absolute;
+        top: 400px;
+        
+      }
+      .x{
+       
+        margin-top: 40px;
+        background-color: #413535;
+        width: 350px;
+        height: 600px;
+        padding-left: 20px;
+              
+      }
+      .x h4{
+        margin-top: 20px;
+        font-family: serif;
+        font-weight: 2px;
+        color: rgb(235, 231, 229);
+      }
+      .x input{
+        background: #7c7676;
+        margin-top: 10px;
+        height: 30px;
+        width: 250px;
+        color:rgb(250, 250, 250);
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 20px;
+       
+
+      }
+      .sink button{
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 5px 10px;
+      }
+      .high{
+        margin-top: 50px;
+      }
+      .a{
+        margin-top: 10px;
+        position: relative;
+        bottom: -30px;
+      }
+      .a textarea{
+        margin-left: 20px;
+        background-color: #797373;
+        margin-top: 10px;
+        border-radius: 10px;
+        color: white;
+
+      }
+      .k{
+        text-align: center;
+        align-items: center;
+        margin-top: 20px;
+        border: none;
+
+      }
+      .k button{
+        display: inline-block;
+        outline: none;
+        border: none;
+        padding: 7px 10px;
+        border-radius: 5px;
+        background-color: #f34a4a;
+        color: white;
+        box-shadow: 0px 0px 5px rgb(71, 67, 67), 0px 0px 15px #423939;
+        text-align: center;
+        border: none;
+        justify-content: center;
+      }
+      @media only screen and (max-width: 393px) {
+        .email button {
+          display: inline-block;
+          position: absolute;
+
+          left: 230px;
+          top: 200px;
+          outline: none;
+          border: none;
+          padding: 7px 10px;
+          border-radius: 30px;
+          background-color: #f9004d;
+          color: white;
+          box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    
+      <div class="nav">
+        <div>
+          <h1 id="home" class="portfo">Portfo<span class="lio">lio</span></h1>
+        </div>
+        <!--<ul class="menu bar">
+          <button class="menuback">&#9747</button>
+          <li><a class="links first" href="#">home</a></li>
+          <li><a class="links" href="#">About Us</a></li>
+          <li><a class="links" href="#">Services</a></li>
+          <li><a class="links" href="#">Skills</a></li>
+          <li><a class="links" href="#">Contect Us</a></li>
+        </ul>-->
+        <div class="subandmenu">
+          <div class="icon">
+            <button class="menubottan">&#9776</button>
+          </div>
+        </div>
+      </div>
+      <div class="whole  ">
+        <div class="selfintro"> 
+          <div>
+            <h5>Hello My Name Is</h5>
+            <h1>Elavara <span class="namelast">san</span></h1>
+            <h4>I'm a Web Developer</h4>
+          </div>
+          <div>
+            <form action="" class="email">
+              <div class="en">
+                <input class="inp" type="email" placeholder="Enter your Email" />
+                <button class="let">let start</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="img">
+          <div class="image">
+            <img
+              class="sn"
+              height="350px"
+              width="250px"
+              src="./sanjai.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="about">
+          <h1 id="about">About Me</h1>
+          <h4>Developer <span>Designer</span></h4>
+          <p class="con">
+            Hi, I'm Elavarasan, Co Founder of Tweak Enterprises, a Front End Web
+            Developer. I ejaoy creating designs and making them real-life.!
+          </p>
+          <div class="talk"><button class="letst">Lets Talk</button></div>
+        </div>
+
+        <div class="services">
+          <h1 class="our" id="services">Our Services</h1>
+          <div class="sanjai r">
+            <div class="tappa">
+              <img
+                src="./red colou menubar.png"
+                height="50px"
+                width="50px"
+                alt=""
+              />
+              <h3>Web Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio quas et tempora voluptatibus placeat rem? Doloremque
+                unde necessitatibus molestias beatae tenetur deleniti neque
+                doloribus quae, similique porro itaque harum sit.
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="services">
+          <div class="sanjai r">
+            <div class="tappa">
+              <img
+                src="./contectlogo.jpg"
+                height="50px"
+                width="50px"
+                alt=""
+              />
+              <h3>Web Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio quas et tempora voluptatibus placeat rem? Doloremque
+                unde necessitatibus molestias beatae tenetur deleniti neque
+                doloribus quae, similique porro itaque harum sit.
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="services">
+          <div class="sanjai r">
+            <div class="tappa">
+              <img
+                src="./bell icon.jpg"
+                height="50px"
+                width="50px"
+                alt=""
+              />
+              <h3>Web Developer</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Distinctio quas et tempora voluptatibus placeat rem? Doloremque
+                unde necessitatibus molestias beatae tenetur deleniti neque
+                doloribus quae, similique porro itaque harum sit.
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hide">
+          <h4 id="skil">Let Me Get You A Beautiful Website</h4>
+          <button>Hire Me</button>
+        </div>
+        <div class="last">
+          <h1 id="contect">Elavara <span>san</span></h1>
+          <p>more details for me click about here</p> 
+          <div class="c">
+            <a href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.instagram.com/sanjai_11122/&ved=2ahUKEwiO1NedjY_3AhVDDN4KHYvZCsQQFnoECAMQAQ&usg=AOvVaw3tmiwgCkK4ozwkvJ505lgJ"><img src="./instagram.logo.png" height="25px" width="25px" alt=""></a>
+            <a href="https://m.facebook.com/100052008711039/"><img src="./faceboook.png" height="25px" width="25px" alt=""></a>
+            <a href="https://api.whatsapp.com/send?phone=9345448925&text=hi%20welcome%20to%20my%20whatshap"><img src="./whts.png" height="25px" width="25px" alt=""></a>
+          </div>
+        </div>  
+        <div class="uls i">
+          
+          <button class="int"> &#9747</button>
+          <ul>
+            <li><a id ="l"class="link" href="#home">Home</a></li>
+            <li><a class="link" href="#about">About Us</a></li>
+            <li><a class="link" href="#services">Services</a></li>
+            <li><a class="link" href="#skil">Skills</a></li>
+            <li><a class="link" href="#contect">Contect Us</a></li>
+          </ul>
+            
+        </div>
+        <div class="letstalk i">
+          <div class="x">
+            <form action="">
+              <div class="sink">
+                <button class="h" >&#9747</button>
+              </div>
+              <div class="a">
+                <h4 class="high">Name</h4>
+                <input  required class="ink" type="text" placeholder=" Enter Your Firs Name">
+                <h4>Last Name</h4>
+                <input class="ink" required type="text" placeholder=" Enter Your Firs Name">
+                <h4>Mail Id</h4>
+                <input  class="ink" type="" required name="" id="">
+                <h4>Message</h4>
+                <textarea  class="ink" name="" id="" cols="30" rows="10"></textarea>
+                <h4>Contect Number</h4>
+                <input  class="ink" type="number" name="" id="" maxlength="10">
+                <div class="k">
+                  <button class="t">Submit</button>
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+     
+    
+
+    <script>
+      const menubuttan = document.querySelector(".menubottan");
+      const returnbuttan = document.querySelector(".uls");
+      const links = document.querySelectorAll(".link");
+      const close = document.querySelector(".int");
+      const whole = document.querySelector(".whole");
+      menubuttan.addEventListener("click", function () {
+        returnbuttan.classList.remove("i");
+        whole.classList.add("overlay");
+        returnbuttan.style.color = "white";
+      });
+
+      close.addEventListener("click", () => {
+        returnbuttan.classList.add("i");
+        whole.classList.remove("overlay");
+      });
+      document.querySelector(".whole").addEventListener("click", () => {
+        returnbuttan.classList.add("i");
+        whole.classList.remove("overlay");
+      });
+      document.querySelector('.let').addEventListener('click',function(){
+        alert(`your ${document.querySelector('.inp').value} mail is responsive`)  
+        document.querySelector('.inp').value="" ;  
+      })
+      
+      document.querySelector('.letst').addEventListener('click',function(){
+        document.querySelector('.letstalk').classList.remove('i')
+      })
+      document.querySelector('.h').addEventListener('click',function(){
+        document.querySelector('.letstalk').classList.add('i')
+      })
+      document.querySelector('.t').addEventListener('click',function(){
+        
+        alert('your aplication is respansed')
+        document.querySelector('.letstalk').classList.add('i')
+      })
+
+
+    </script>
+  </body>
+</html>
